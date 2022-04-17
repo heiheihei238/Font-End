@@ -1,0 +1,27 @@
+.main {
+    width: 200px;
+    height: 100px;
+    background: gray;
+}
+.child1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    float: left;
+
+}
+.child2 {
+    width: 100px;
+    height: 100px;
+    background: green;
+    float: left;
+}
+.p {
+    color: white;
+    clear: both;
+}
+.main::after {
+    content: "";
+    display: block;
+    clear: both;
+}
