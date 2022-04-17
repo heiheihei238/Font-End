@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.header {
+    width: 100vw;
+    height: 100px;
+    background: #ab61b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    width: 100vw;
+    height: calc(100vh - 100px);
+}
+.gradient1{
+    float: left;
+    width:calc(100vw/3);
+    height:200px;
+    background-image: radial-gradient(5px 10px ellipse,transparent 4px, yellow 5px, red 6px, transparent 7px),
+                radial-gradient(3px circle,red, red 3px, transparent 4px);
+    /*CSS3中需要给定两个参数，即横向和纵向，否则默认100%*/
+    background-size: 25px 25px;
+}
+.gradient2{
+    float: left;
+    width: calc(100vw/3);
+    height: 200px;
+    background-image: radial-gradient(circle at 70% 30%, red, green);
+}
+.gradient3{
+    float: left;
+    width: calc(100vw/3);
+    height: 200px;
+    /*渐变中心距离容器最近的角作为终止位置*/
+    background-image: radial-gradient(closest-corner at 70% 30%, red, green);
+}
+.gradient4{
+    float: left;
+    width: calc(100vw/3);
+    height: 200px;
+    /*渐变中心距离容器最远的角作为终止位置*/
+    background-image: radial-gradient(farthest-corner at 70% 30%, red, green);
+}
+.gradient5{
+    float: left;
+    width: calc(100vw/3);
+    height: 200px;
+    /*渐变中心距离容器最远的角作为终止位置*/
+    background-image: radial-gradient(closest-side at 70% 30%, red, green);
+}
+.gradient6{
+    float: left;
+    width: calc(100vw/3);
+    height: 200px;
+    /*渐变中心距离容器最远的角作为终止位置*/
+    background-image: radial-gradient(farthest-side at 70% 30%, red, green);
+}
