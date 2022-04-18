@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS作用域（1）</title>
+</head>
+<body>
+<p style="text-align: center">在HTML中所有使用的JS变量都会变为全局变量</p>
+<p id="demo" style="text-align: center;margin-top: 120px"></p>
+<p id="demo2" style="text-align: center;margin-top: 120px">点完我会变</p>
+<button style="margin-left: 48vw;margin-top: 120px" onclick="myFunction3()">点击</button>
+<button style="margin-left: 48vw;margin-top: 120px" onclick="getElementById('demo3').innerHTML=Date()">现在的时间是?</button>
+<button style="margin-left: 48vw;margin-top: 120px" onclick="this.innerHTML=Date()">现在的时间是?</button>
+<p id="demo3"></p>
+<script type="text/javascript" src="JS作用域（2）.js"> /*引入JS文件*/
+    myFunction();
+    document.getElementById("demo").innerHTML = "我可以显示 " + window.carName;
+    function myFunction()
+    {
+        carName = "Volvo";
+    }
+</script>
+</body>
+</html>
