@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>玻璃卡片悬停效果</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/玻璃卡片悬停效果.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="content">
+            <h2>01</h2>
+            <h3>Card One</h3>
+            <p>Realistic glass card hover effect, realistic glass card hover effect, realistic glass card hover effect.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2>02</h2>
+            <h3>Card Two</h3>
+            <p>Realistic glass card hover effect, realistic glass card hover effect, realistic glass card hover effect.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2>03</h2>
+            <h3>Card Three</h3>
+            <p>Realistic glass card hover effect, realistic glass card hover effect, realistic glass card hover effect.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2>04</h2>
+            <h3>Card Four</h3>
+            <p>Realistic glass card hover effect, realistic glass card hover effect, realistic glass card hover effect.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+</div>
+<script src="../JAVASCRIPT/3D倾斜JS库.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 15, /* 最大倾斜角度 */
+        speed: 400, /* 倾斜转换的速度 */
+        glare: true, /* 是否开启炫光效果 */
+        "max-glare": 1 /* 炫光的最大不透明度 */
+    });
+</script>
+</body>
+</html>
