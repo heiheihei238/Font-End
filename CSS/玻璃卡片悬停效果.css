@@ -16,6 +16,7 @@ body{
     background-color: #161626;
 }
 body::before{
+    /* 注意！对于伪元素而言，如果不添加content属性，是不会显示的 */
     content: "";
     position: absolute;
     top: 0;
@@ -27,6 +28,7 @@ body::before{
     clip-path: circle(30% at right 70%);
 }
 body::after{
+    /* 注意！对于伪元素而言，如果不添加content属性，是不会显示的 */
     content: "";
     position: absolute;
     top: 0;
@@ -43,12 +45,13 @@ body::after{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    /* z-index只会对元素本身有效，对其子元素无效，且只对设置了position为relative，absolute和fixed的元素有效 */
     z-index: 1;
 }
 .container .card{
     position: relative;
-    width: 400px;
-    height: 800px;
+    width: 30vw;
+    height: 40vh;
     background-color: rgba(255,255,255,0.1);
     margin: 30px;
     border-radius: 15px;
@@ -61,7 +64,7 @@ body::after{
     align-items: center;
     border-top: 1px solid rgba(255,255,255,0.5);
     border-left: 1px solid rgba(255,255,255,0.5);
-    /* 背景模糊 */
+    /* 背景模糊，blur中的值越大则越模糊 */
     /* 该属性不适用于FireFox */
     backdrop-filter: blur(5px);
 }
@@ -69,9 +72,13 @@ body::after{
     padding: 20px;
     text-align: center;
     /* 默认下移+隐藏 */
+    /* 这里的机制实际是定义转换，translateY指仅针对Y轴的转换，skew可以实现对X轴和Y轴同时转换角度
+    从而实现图片的扭曲，rotate可以实现图片的旋转*/
     transform: translateY(100px);
+    /* 设置透明度 */
     opacity: 0;
-    transition: 0.5s;
+    /* 设置动画 */
+    transition: 2s;
 }
 .container .card:hover .content{
     /* 鼠标移入时，上移+显示 */
@@ -80,10 +87,10 @@ body::after{
 }
 .container .card .content h2{
     position: absolute;
-    top: 0;
+    top: 1px;
     right: 30px;
     font-size: 128px;
-    color: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.15);
 }
 .container .card .content h3{
     font-size: 28px;
