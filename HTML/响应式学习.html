@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式学习</title>
+</head>
+<body>
+/* 对于响应式布局，现代化的处理方式是使用flex布局或是grid布局，这两种布局都是基于现代浏览器的CSS3标准来实现的 */
+/* 相对更早一点的方法是使用@media来实现响应式布局，这种方法的缺点是不能实现灵活的布局，因为它只能在一个屏幕的宽度范围内进行布局 */
+
+/* 对图片实现响应式的方法， 可以对不同分辨率提供不同的尺寸图片，即指向多个源文件 */
+/* srcset属性定义了允许浏览器选择的图像集，以及每个图像的大小 */
+/* sizes定义了一组媒体条件， 例如当屏幕的宽度小于600px时， 图片的宽度就是480px，反之则为800px */
+/* 这种响应式的目的首先是为了让移动端客户节省宽带，防止图片过大，导致浏览器做一些额外的工作，从而导致页面的加载速度变慢 */
+<img srcset="elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 600px) 480px,
+            800px"
+     src="elva-fairy-800w.jpg"
+     alt="Elva dressed as a fairy">
+
+
+/* 相同大小，不同分辨率 */
+<img srcset="elva-fairy-320w.jpg,
+             elva-fairy-480w.jpg 1.5x,
+             elva-fairy-640w.jpg 2x"
+     src="elva-fairy-640w.jpg"
+     alt="Elva dressed as a fairy">
+
+/* picture是一个包装器，为浏览器提供不同的来源以供选择 */
+/* media包含媒体条件属性，决定显示哪个图片 */
+/* img是一个必须要提供的元素，否则不会出现任何图片，这表示没有任何媒体条件返回true时，显示该图片 */
+<picture>
+    <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+    <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+    <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+</picture>
+
+</body>
+</html>
