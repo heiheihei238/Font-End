@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emmet命令测试</title>
+</head>
+<body>
+/* 后代语法, > */
+nav>ul>li
+
+/* 兄弟语法, + */
+div+p+bq
+
+/* 回退到上级语法, ^ */
+div+div>p>span+em^bq
+
+/* 分组语法, () */
+div>(header>ul>li*2>a)+footer>p
+
+/* 复制语法, * */
+ul>li*5
+
+/* 自增符号, $ */
+ul>li.item$*5
+
+/* ID和类属性 */
+#header
+.title
+form#search.wide
+p.class1.class2.class3
+
+/* 自定义属性 */
+p[title="Hello world"]
+td[rowspan=2 colspan=3 title]
+[a='value1' b="value2"]
+
+/* 文本 */
+a{Click me}
+p>{Click }+a{here}+{ to continue}
+
+/* 对于固定的标签， 如tabel中必定是tr的情况， 可以直接写.row或是.col从而省略tr的书写 */
+</body>
+</html>
