@@ -9,6 +9,7 @@
 <body>
 
 <!-- 目前仍然存在的问题：当超过content高度时底部显示不完全 -->
+<!-- 主要导致原本出错的问题是： JS无法读取全局变量，需要在函数中定义； .value字段已经被淘汰，需要使用innerHTML来对Child内添加内容-->
 
 <div class="header">
     <div class="title">JS动态添加的尝试</div>
